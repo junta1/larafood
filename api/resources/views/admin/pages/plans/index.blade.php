@@ -3,10 +3,10 @@
 @section('title', 'Plano')
 
 @section('content_header')
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="{{ route('admin.index')}}">Dashboard</a></li>
-    <li class="breadcrumb-item active"><a href="{{ route('plans.index')}}">Planos</a></li>
-  </ol>
+<ol class="breadcrumb">
+  <li class="breadcrumb-item"><a href="{{ route('admin.index')}}">Dashboard</a></li>
+  <li class="breadcrumb-item active"><a href="{{ route('plans.index')}}">Planos</a></li>
+</ol>
 
 <h1>Planos <a href="{{route('plans.create')}}" class="btn btn-dark"><i class="fas fa-plus-circle"></i></a></h1>
 @stop
@@ -27,7 +27,7 @@
         <tr>
           <th>Nome</th>
           <th>Preço</th>
-          <th style="width: 50px;">Ações</th>
+          <th style="width: 150px;">Ações</th>
         </tr>
       </thead>
 
@@ -36,8 +36,9 @@
         <tr>
           <td>{{$plan->name}}</td>
           <td>R$ {{number_format($plan->price, 2, ',', '.')}}</td>
-          <td style="width: 10px;">
+          <td style="width: 50px;">
             <a href="{{ route('plans.show', $plan->url) }}" class="btn btn-warning"><i class="fas fa-eye"></i></a>
+            <a href="{{ route('plans.edit', $plan->url) }}" class="btn btn-info"><i class="fas fa-pencil-alt"></i></a>
           </td>
         </tr>
         @endforeach
