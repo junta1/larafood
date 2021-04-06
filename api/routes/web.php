@@ -15,6 +15,17 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('admin')
     ->group(function () {
+
+        /**
+         * Routes Details Plans
+         */
+        Route::get('plans/{url}/details/create', 'Admin\DetailsPlanController@create')->name('details.plan.create');
+        Route::post('plans/{url}/details', 'Admin\DetailsPlanController@store')->name('details.plan.store');
+        Route::get('plans/{url}/details', 'Admin\DetailsPlanController@index')->name('details.plan.index');
+
+        /**
+         * Routes Plans
+         */
         Route::get('plans/create', 'Admin\PlanController@create')->name('plans.create');
         Route::get('plans/{url}/edit', 'Admin\PlanController@edit')->name('plans.edit');
         Route::put('plans/{url}/update', 'Admin\PlanController@update')->name('plans.update');
@@ -24,7 +35,10 @@ Route::prefix('admin')
         Route::get('plans/{url}', 'Admin\PlanController@show')->name('plans.show');
         Route::delete('plans/{url}', 'Admin\PlanController@destroy')->name('plans.destroy');
 
-        Route::get('admin', 'Admin\PlanController@index')->name('admin.index');
+        /**
+         * Home Dashboard
+         */
+        Route::get('/', 'Admin\PlanController@index')->name('admin.index');
     });
 
 Route::get('/', function () {
