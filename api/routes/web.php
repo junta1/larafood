@@ -20,8 +20,12 @@ Route::prefix('admin')
          * Routes Details Plans
          */
         Route::get('plans/{url}/details/create', 'Admin\DetailsPlanController@create')->name('details.plan.create');
-        Route::post('plans/{url}/details', 'Admin\DetailsPlanController@store')->name('details.plan.store');
+        Route::get('plans/{url}/details/{idDetail}/edit', 'Admin\DetailsPlanController@edit')->name('details.plan.edit');
+        Route::put('plans/{url}/details/{idDetail}', 'Admin\DetailsPlanController@update')->name('details.plan.update');
         Route::get('plans/{url}/details', 'Admin\DetailsPlanController@index')->name('details.plan.index');
+        Route::post('plans/{url}/details', 'Admin\DetailsPlanController@store')->name('details.plan.store');
+        Route::get('plans/{url}/details/{idDetail}', 'Admin\DetailsPlanController@show')->name('details.plan.show');
+        Route::delete('plans/{url}/details/{idDetail}', 'Admin\DetailsPlanController@destroy')->name('details.plan.destroy');
 
         /**
          * Routes Plans
