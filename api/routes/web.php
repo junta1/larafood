@@ -17,6 +17,12 @@ Route::prefix('admin')
     ->group(function () {
 
         /**
+         * Profiles
+         */
+        Route::any('profiles/search', 'Admin\ACL\ProfileController@search')->name('profiles.search');
+        Route::resource('profiles', 'Admin\ACL\ProfileController');
+
+        /**
          * Routes Details Plans
          */
         Route::get('plans/{url}/details/create', 'Admin\DetailsPlanController@create')->name('details.plan.create');
@@ -46,5 +52,6 @@ Route::prefix('admin')
     });
 
 Route::get('/', function () {
-    return view('welcome');
+    // return view('welcome');
+    return view('admin.pages.plans.index');
 });
