@@ -17,6 +17,11 @@ Route::prefix('admin')
     ->group(function () {
 
         /**
+         * Permission x Profile
+         */
+        Route::get('profiles/{id}/permissions', 'Admin\ACL\PermissionProfileController@permissions')->name('profiles.permissions');
+
+        /**
          * Permissions
          */
         Route::any('permissions/search', 'Admin\ACL\PermissionController@search')->name('permissions.search');
