@@ -5,10 +5,12 @@
 @section('content_header')
 <ol class="breadcrumb">
   <li class="breadcrumb-item"><a href="{{ route('admin.index')}}">Dashboard</a></li>
-  <li class="breadcrumb-item active"><a href="{{ route('profiles.index')}}">Profiles</a></li>
+  <li class="breadcrumb-item"><a href="{{ route('profiles.index')}}">Perfis</a></li>
+  <li class="breadcrumb-item active"><a href="{{ route('profiles.permissions', $profile->id)}}">Permissões</a></li>
 </ol>
 
-<h1>Permissões do Perfil - {{$profile->name}} <a href="{{route('profiles.create')}}" class="btn btn-dark">ADD NOVA PERMISSÃO</a></h1>
+<h1>Permissões do Perfil - {{$profile->name}} 
+  <a href="{{route('profiles.permissions.available', $profile->id)}}" class="btn btn-dark">ADD NOVA PERMISSÃO</a></h1>
 @stop
 
 @section('content')
@@ -34,8 +36,10 @@
       <tbody>
         @foreach($permissions as $permission)
         <tr>
+          <td>
+            <input type="checkbox" name="permissions" id="" value="{{$permission}}">
+          </td>
           <td>{{$permission->name}}</td>
-          <td>{{$permission->description}}</td>
           <td style="width: 50px;">
             <a href="{{ route('profiles.edit', $permission->id) }}" class="btn btn-info"><i class="fas fa-pencil-alt"></i></a>
           </td>

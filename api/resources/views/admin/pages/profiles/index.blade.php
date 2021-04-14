@@ -5,10 +5,10 @@
 @section('content_header')
 <ol class="breadcrumb">
   <li class="breadcrumb-item"><a href="{{ route('admin.index')}}">Dashboard</a></li>
-  <li class="breadcrumb-item active"><a href="{{ route('profiles.index')}}">Profiles</a></li>
+  <li class="breadcrumb-item active"><a href="{{ route('profiles.index')}}">Perfis</a></li>
 </ol>
 
-<h1>Planos <a href="{{route('profiles.create')}}" class="btn btn-dark"><i class="fas fa-plus-circle"></i></a></h1>
+<h1>Perfis <a href="{{route('profiles.create')}}" class="btn btn-dark"><i class="fas fa-plus-circle"></i></a></h1>
 @stop
 
 @section('content')
