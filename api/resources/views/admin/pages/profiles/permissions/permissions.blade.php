@@ -27,8 +27,8 @@
     <table class="table table-condensed">
       <thead>
         <tr>
+          <th style="width: 80px;">#</th>
           <th>Nome</th>
-          <th>Descrição</th>
           <th style="width: 250px;">Ações</th>
         </tr>
       </thead>
