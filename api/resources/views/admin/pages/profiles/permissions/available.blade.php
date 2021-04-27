@@ -39,7 +39,7 @@
           @foreach($permissions as $permission)
             <tr>
               <td>
-                <input type="checkbox" name="permissions" id="" value="{{$permission->id}}">
+                <input type="checkbox" name="permissions[]" id="" value="{{$permission->id}}">
               </td>
               <td>
                 {{$permission->name}}
