@@ -11,12 +11,13 @@ services:
       volumes:
         - .:/application
       environment:
-        - MYSQL_ROOT_PASSWORD=secret
+        - MYSQL_ROOT_PASSWORD=root
         - MYSQL_DATABASE=db_larafood
         - MYSQL_USER=secret
         - MYSQL_PASSWORD=secret
       ports:
-        - "33060:3306"
+        - "8002:3306"
+        
 
     webserver:
       image: nginx:alpine
