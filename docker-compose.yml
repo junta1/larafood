@@ -13,7 +13,7 @@ services:
       environment:
         - MYSQL_ROOT_PASSWORD=root
         - MYSQL_DATABASE=db_larafood
-        - MYSQL_USER=secret
+        # - MYSQL_USER=secret
         - MYSQL_PASSWORD=secret
       ports:
         - "8002:3306"
