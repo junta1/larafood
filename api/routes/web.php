@@ -23,7 +23,7 @@ Route::prefix('admin')
         Route::post('profiles/{id}/permissions', 'Admin\ACL\PermissionProfileController@attachPermissionsProfile')->name('profiles.permissions.attach');
         Route::any('profiles/{id}/permissions/create', 'Admin\ACL\PermissionProfileController@permissionsAvailable')->name('profiles.permissions.available');
         Route::get('profiles/{id}/permissions', 'Admin\ACL\PermissionProfileController@permissions')->name('profiles.permissions');
-        Route::get('permissions/{id}/profiles', 'Admin\ACL\PermissionProfileController@perfis')->name('permissions.profiles');
+        Route::get('permissions/{id}/profiles', 'Admin\ACL\PermissionProfileController@profiles')->name('permissions.profiles');
 
         /**
          * Permissions
