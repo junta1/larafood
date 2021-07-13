@@ -10,7 +10,7 @@
 </ol>
 
 <h1>Perfis do plano - <strong>{{$plan->name}}</strong>
-  <a href="{{route('plans.permissions.available', $plan->id)}}" class="btn btn-dark">ADD NOVO PERFIL</a></h1>
+  <a href="{{route('plans.profiles.available', $plan->id)}}" class="btn btn-dark">ADD NOVO PERFIL</a></h1>
 @stop
 
 @section('content')
