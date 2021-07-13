@@ -39,8 +39,9 @@
                     <td>R$ {{number_format($plan->price, 2, ',', '.')}}</td>
                     <td style="width: 50px;">
                         <a href="{{ route('details.plan.index', $plan->url) }}" class="btn btn-primary"><i class="fas fa-list-alt"></i></a>
-                        <a href="{{ route('plans.show', $plan->url) }}" class="btn btn-warning"><i class="fas fa-eye"></i></a>
                         <a href="{{ route('plans.edit', $plan->url) }}" class="btn btn-info"><i class="fas fa-pencil-alt"></i></a>
+                        <a href="{{ route('plans.show', $plan->url) }}" class="btn btn-warning"><i class="fas fa-eye"></i></a>
+                        <a href="{{ route('plans.profiles', $plan->id) }}" class="btn btn-warning"><i class="fas fa-address-book"></i></a>
                     </td>
                 </tr>
                 @endforeach

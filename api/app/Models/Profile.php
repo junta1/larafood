@@ -19,6 +19,14 @@ class Profile extends Model
     }
 
     /**
+     * Get Plans
+     */
+    public function plans()
+    {
+        return $this->belongsToMany(Plan::class);
+    }
+
+    /**
      * Permission not linked with this profile
      */
     public function permissionsAvailable($filter = null)
@@ -29,13 +37,13 @@ class Profile extends Model
                 // ->whereRaw("permission_profile.profile_id={$this->id}");
                 ->where('permission_profile.profile_id', $this->id);
         })
-        ->where(function($queryFilter) use ($filter) {
-            if($filter){
-                $queryFilter->where('permissions.name', 'LIKE', "%{$filter}%");
-            }
-        })
-        ->paginate();
-        
+            ->where(function ($queryFilter) use ($filter) {
+                if ($filter) {
+                    $queryFilter->where('permissions.name', 'LIKE', "%{$filter}%");
+                }
+            })
+            ->paginate();
+
         return $permissions;
     }
 }
