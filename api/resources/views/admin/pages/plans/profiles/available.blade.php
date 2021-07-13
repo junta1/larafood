@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', "Permissões disponíveis Perfil {$profile->name}")
+@section('title', "Perfis disponíveis para o plano  {$plan->name}")
 
 @section('content_header')
 <ol class="breadcrumb">
@@ -10,7 +10,7 @@
     <li class="breadcrumb-item active"><a href="{{ route('plans.profiles.available', $plan->id) }}" class="active">Disponíveis</a></li>
 </ol>
 
-<h1>Permissões disponíveis Perfil - <strong>{{ $plan->name }}</strong></h1>
+<h1>Perfis disponíveis para o plano - <strong>{{ $plan->name }}</strong></h1>
 @stop
 
 @section('content')
@@ -38,7 +38,7 @@
                     @foreach($profiles as $profile)
                     <tr>
                         <td>
-                            <input type="checkbox" name="permissions[]" id="" value="{{$profile->id}}">
+                            <input type="checkbox" name="profiles[]" id="" value="{{$profile->id}}">
                         </td>
                         <td>
                             {{$profile->name}}

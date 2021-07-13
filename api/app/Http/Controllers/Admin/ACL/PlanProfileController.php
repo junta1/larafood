@@ -78,7 +78,7 @@ class PlanProfileController extends Controller
 
         if (!$request->profiles || empty($request->profiles)) {
             return redirect()->back()
-                ->with('info', 'Precisa escolher pelo menos uma permissão.');
+                ->with('info', 'Precisa escolher pelo menos um plano.');
         }
 
         $plan->profiles()->attach($request->profiles);
@@ -86,7 +86,7 @@ class PlanProfileController extends Controller
         return redirect()->route('plans.profiles', $plan->id);
     }
 
-    public function detachprofilesplan($idplan, $idprofile){
+    public function detachprofileplan($idplan, $idprofile){
         $plan = $this->plan->find($idplan);
         $profile = $this->profile->find($idprofile);
 

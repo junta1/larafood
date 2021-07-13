@@ -29,11 +29,11 @@
         @foreach($profiles as $profile)
         <tr>
           <td>
-            <input type="checkbox" name="permissions" id="" value="{{$permission}}">
+            <input type="checkbox" name="profiles" id="" value="{{$profiles}}">
           </td>
           <td>{{$profile->name}}</td>
           <td style="width: 50px;">
-            <a href="{{ route('plans.profiles.detach', [$plan->id, $profile->id]) }}" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
+            <a href="{{ route('plans.profile.detach', [$plan->id, $profile->id]) }}" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
           </td>
         </tr>
         @endforeach

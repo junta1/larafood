@@ -19,8 +19,8 @@ Route::prefix('admin')
         /**
          * Plan x Profile
          */
-        Route::get('plans/{id}/profile/{idProfile}/detach', 'Admin\ACL\PlanProfileController@detachPlanProfile')->name('plans.profile.detach');
-        Route::post('plans/{id}/profiles', 'Admin\ACL\PlanProfileController@attachProfilesProfile')->name('plans.profiles.attach');
+        Route::get('plans/{id}/profile/{idProfile}/detach', 'Admin\ACL\PlanProfileController@detachProfilePlan')->name('plans.profile.detach');
+        Route::post('plans/{id}/profiles', 'Admin\ACL\PlanProfileController@attachProfilesPlan')->name('plans.profiles.attach');
         Route::any('plans/{id}/profiles/create', 'Admin\ACL\PlanProfileController@profilesAvailable')->name('plans.profiles.available');
         Route::get('plans/{id}/profiles', 'Admin\ACL\PlanProfileController@profiles')->name('plans.profiles');
         Route::get('profiles/{id}/plans', 'Admin\ACL\PlanProfileController@plans')->name('profiles.plans');

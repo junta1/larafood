@@ -28,9 +28,8 @@
                 @foreach ($plans as $plan)
                 <tr>
                     <td>
-                        <input type="checkbox" name="permissions" id="" value="{{$permission}}">
+                        {{$plan->name}}
                     </td>
-                    <td>{{$plan->name}}</td>
                     <td style="width: 50px;">
                         <a href="{{ route('plans.profile.detach', [$plan->id, $profile->id]) }}" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
                     </td>
